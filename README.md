@@ -23,7 +23,9 @@ Queried All the Opportunity
 storing it in List
 Passing to LWC
 
-# In LWC
+# In Js
+
+Line number 9 , 21-24 , 27 Not needed
 
 ## getOpportunityReportDatas method
 
