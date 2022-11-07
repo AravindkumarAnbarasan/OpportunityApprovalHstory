@@ -1,0 +1,53 @@
+<template>
+    <lightning-card title="Approval History Report" class="my-card">
+        <table>
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                    StageName
+                </th>
+                <th>
+                    Amount
+                </th>
+                <th>
+                    Status
+                </th>
+                <th>
+                    ElapsedTimeInHours
+                </th>
+                <th>
+                    StepStatus
+                </th>
+           
+            </tr>
+            <template for:each={storeHistoryCollection} for:item="keyValueHistory" >
+                <template for:each={keyValueHistory.value} for:item="iterateHistoryValues" >
+                    <tr key={keyValueHistory.key.Id}>
+                        <td scope="col">
+                            <div>{keyValueHistory.key.Name}</div>
+                        </td>
+                        <td scope="col">
+                            <div>{keyValueHistory.key.StageName}</div>
+                        </td>
+                        <td scope="col">
+                            <div>{keyValueHistory.key.Amount}</div>
+                        </td>
+                        <td scope="col">
+                            <div>{iterateHistoryValues.Status}</div>
+                        </td>
+                        <td scope="col">
+                            <div>{iterateHistoryValues.ElapsedTimeInHours}</div>
+                        </td>
+                        <template for:each={iterateHistoryValues.Steps.records} for:item="Step" >
+                            <div style="border: 0.1px solid black; background-color: #fffffff9;" key ={Step.Id}>
+                                {Step.StepStatus}
+                            </div> 
+                        </template>
+                    </tr>
+                </template>
+            </template>
+        </table>
+    </lightning-card>
+</template>

@@ -1,0 +1,6 @@
+table, th, td {
+    border: 2.5px solid black;
+  }
+  th, td {
+    background-color: #fffffff9;
+  }
